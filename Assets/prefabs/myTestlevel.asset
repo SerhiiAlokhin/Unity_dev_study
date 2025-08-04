@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 084b3ccb74b9f0a47b8c5c809ac9ee7f, type: 3}
-  m_Name: chunk2
+  m_Name: myTestlevel
   m_EditorClassIdentifier: 
   _enabled: 1
-  _pathGenerator: {fileID: 11400000, guid: acf30a5c50b9f4cc1842203d7995ebc8, type: 2}
+  _pathGenerator: {fileID: 11400000, guid: 3529cc9903db546449d530fea2dc69de, type: 2}
   _sequenceCollection:
     sequences:
     - enabled: 1
@@ -23,7 +23,13 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 2963692900162857805, guid: 3a8e37bb16cc447b9abed5d25122b5c5, type: 3}
+        _prefab: {fileID: 944233674349122040, guid: 5d66865459ac24ba2a9e6d44a11f73ca, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 944233674349122040, guid: e20db8a61685f43eda6891563a7ae3f8, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -44,7 +50,13 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 2963692900162857805, guid: 3a8e37bb16cc447b9abed5d25122b5c5, type: 3}
+        _prefab: {fileID: 944233674349122040, guid: 5d66865459ac24ba2a9e6d44a11f73ca, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 944233674349122040, guid: e20db8a61685f43eda6891563a7ae3f8, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
