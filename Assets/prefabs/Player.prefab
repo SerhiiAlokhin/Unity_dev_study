@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 8180267013675427340}
   - component: {fileID: 7288729513677616950}
   - component: {fileID: 6215647347322842838}
-  - component: {fileID: 5301925033253562361}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -224,16 +223,3 @@ MonoBehaviour:
   useAccurateMode: 0
   drawDebug: 0
   debugColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &5301925033253562361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7778120560424224689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce9291002b86742818fa9df643e3e12d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
