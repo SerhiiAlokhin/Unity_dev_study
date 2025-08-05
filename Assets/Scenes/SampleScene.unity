@@ -212,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.108799934, y: 4.76, z: -5.96}
+  m_LocalPosition: {x: 0.108799934, y: 5.8599997, z: -7.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -474,6 +474,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2139454774}
     m_Modifications:
+    - target: {fileID: 1775962056159476566, guid: 6bbecff2873584cf1ace25ebf2b2e536, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4547199139920499232, guid: 6bbecff2873584cf1ace25ebf2b2e536, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.14
@@ -667,8 +671,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 251, y: 252}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 150, y: 152}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1479395903
 MonoBehaviour:
@@ -789,10 +793,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damping: {x: 0.3, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 0.4, y: 0.4, z: 0}
+  ShoulderOffset: {x: 0.4, y: 1.5, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 0.811
-  CameraDistance: 5
+  CameraDistance: 7
   CameraCollisionFilter:
     serializedVersion: 2
     m_Bits: 0
@@ -877,7 +881,7 @@ Transform:
   m_GameObject: {fileID: 1697499785}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3715704, y: -0.37367204, z: 0.16660205, w: 0.8333958}
-  m_LocalPosition: {x: 0.108799934, y: 4.76, z: -5.96}
+  m_LocalPosition: {x: 0.108799934, y: 5.8599997, z: -7.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -920,7 +924,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 358, y: 340}
-  m_SizeDelta: {x: 500, y: 500}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1994035197
 MonoBehaviour:
