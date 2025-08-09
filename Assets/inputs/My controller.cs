@@ -44,6 +44,15 @@ public partial class @Mycontroller: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""7abab17e-4321-4b6e-939f-0c2313349a6c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -189,6 +198,17 @@ public partial class @Mycontroller: IInputActionCollection2, IDisposable
                     ""action"": ""exitbutton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d70b2e9f-4556-4f29-ace2-28cfcdaedbbf"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -199,6 +219,7 @@ public partial class @Mycontroller: IInputActionCollection2, IDisposable
         m_ball = asset.FindActionMap("ball", throwIfNotFound: true);
         m_ball_movement = m_ball.FindAction("movement", throwIfNotFound: true);
         m_ball_exitbutton = m_ball.FindAction("exitbutton", throwIfNotFound: true);
+        m_ball_Jump = m_ball.FindAction("Jump", throwIfNotFound: true);
     }
 
     ~@Mycontroller()
@@ -267,12 +288,14 @@ public partial class @Mycontroller: IInputActionCollection2, IDisposable
     private List<IBallActions> m_BallActionsCallbackInterfaces = new List<IBallActions>();
     private readonly InputAction m_ball_movement;
     private readonly InputAction m_ball_exitbutton;
+    private readonly InputAction m_ball_Jump;
     public struct BallActions
     {
         private @Mycontroller m_Wrapper;
         public BallActions(@Mycontroller wrapper) { m_Wrapper = wrapper; }
         public InputAction @movement => m_Wrapper.m_ball_movement;
         public InputAction @exitbutton => m_Wrapper.m_ball_exitbutton;
+        public InputAction @Jump => m_Wrapper.m_ball_Jump;
         public InputActionMap Get() { return m_Wrapper.m_ball; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -288,6 +311,9 @@ public partial class @Mycontroller: IInputActionCollection2, IDisposable
             @exitbutton.started += instance.OnExitbutton;
             @exitbutton.performed += instance.OnExitbutton;
             @exitbutton.canceled += instance.OnExitbutton;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
         }
 
         private void UnregisterCallbacks(IBallActions instance)
@@ -298,6 +324,9 @@ public partial class @Mycontroller: IInputActionCollection2, IDisposable
             @exitbutton.started -= instance.OnExitbutton;
             @exitbutton.performed -= instance.OnExitbutton;
             @exitbutton.canceled -= instance.OnExitbutton;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
         }
 
         public void RemoveCallbacks(IBallActions instance)
@@ -319,5 +348,6 @@ public partial class @Mycontroller: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnExitbutton(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }
