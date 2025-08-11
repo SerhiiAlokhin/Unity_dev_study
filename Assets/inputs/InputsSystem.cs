@@ -15,6 +15,7 @@ namespace Controllers.Input
         public event Action<Vector2> MovementRecieved;
         public event Action MovementEnd;
         public event Action EscapeButtonPressed;
+        public event Action Jump;
 
         public InputSystem()
         {
@@ -28,7 +29,10 @@ namespace Controllers.Input
             _inputAction.ball.movement.performed += OnMovementPerformed;
             _inputAction.ball.movement.canceled += OnMovementEnd;
             _inputAction.ball.movement.performed += OnEscapePressed;
+            _inputAction.ball.Jump.performed += OnJump;
         }
+
+        private void OnJump(InputAction.CallbackContext callbackContext) => Jump?.Invoke();
 
         private void OnMovementPerformed(InputAction.CallbackContext callbackContext) => MovementRecieved?.Invoke(callbackContext.ReadValue<Vector2>());
 
@@ -41,6 +45,7 @@ namespace Controllers.Input
             _inputAction.ball.movement.performed -= OnMovementPerformed;
             _inputAction.ball.movement.canceled -= OnMovementEnd;
             _inputAction.ball.movement.performed -= OnEscapePressed;
+            _inputAction.ball.Jump.performed -= OnJump;
         }
 
     }
