@@ -13,7 +13,7 @@ namespace Game
         [SerializeField] private float _controllerSlow = 10f;
         [SerializeField] private Animator _animator;
 
-        [SerializeField] private float _preJumpDelay = 0.5f;   
+        [SerializeField] private float _preJumpDelay = 0.5f;
         [SerializeField] private float _jumpHeight = 3f;
         [SerializeField] private float _jumpDuration = 0.5f;
 
@@ -30,9 +30,12 @@ namespace Game
         private void Awake()
         {
             _inputSystem = new();
-            _animator.SetBool(RunningBool, true);
             _inputSystem.SubscribeEvents();
             SubscribeEvents();
+
+            // Если хочешь, чтобы анимация «бега» включалась только при старте игры:
+            bool active = GameManager.I != null && GameManager.I.IsGameActive;
+            _animator.SetBool(RunningBool, active);
         }
 
         private void SubscribeEvents()
@@ -51,17 +54,16 @@ namespace Game
 
         private void OnMovementRecieved(Vector2 movement)
         {
+            if (GameManager.I == null || !GameManager.I.IsGameActive) return;
             _addValue = movement.x / _controllerSlow;
         }
 
         private void OnJumpPressed()
         {
+            if (GameManager.I == null || !GameManager.I.IsGameActive) return;
             if (_isJumping) return;
 
-            
             _animator.SetTrigger(JumpTrigger);
-
-            
             StartCoroutine(JumpCoroutine());
         }
 
@@ -82,7 +84,7 @@ namespace Game
             while (t < _jumpDuration)
             {
                 t += Time.deltaTime;
-                float n = Mathf.Clamp01(t / _jumpDuration); 
+                float n = Mathf.Clamp01(t / _jumpDuration);
                 _verticalOffset = 4f * _jumpHeight * n * (1f - n);
                 yield return null;
             }
@@ -93,6 +95,8 @@ namespace Game
 
         private void Update()
         {
+            if (GameManager.I == null || !GameManager.I.IsGameActive) return;
+
             _targetVector = new Vector2(
                 Mathf.Clamp(_targetVector.x + _addValue, -LevelWidth, LevelWidth),
                 _verticalOffset
