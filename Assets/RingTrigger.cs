@@ -1,4 +1,5 @@
 using UnityEngine;
+using JSAM;
 
 public class RingTrigger : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class RingTrigger : MonoBehaviour
         if (other.CompareTag(playerTag))
         {
             ScoreManager.Instance?.AddRing(1);
+            AudioManager.PlaySound(myAudioLibSounds.RingSFX);
         }
     }
 }
