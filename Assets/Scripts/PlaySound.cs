@@ -1,15 +1,15 @@
 using UnityEngine;
 using JSAM;
-using System.Threading.Tasks;
 
-
-public class PlaySound : MonoBehaviour
+public class StartMenuMusic : MonoBehaviour
 {
-    private async void Start()
-    {
-        await Task.Delay(1000);
+    [SerializeField] private MusicFileObject music;
+    private static bool started;
 
-        //AudioManager.PlaySound(myAudioLibSounds.RingSFX);
-        var music = AudioManager.PlayMusic(myAudioLibMusic.MusicFX, true);
+    private void OnEnable()
+    {
+        if (started || music == null) return;
+        started = true;
+        AudioManager.PlayMusic(music, true); 
     }
 }
