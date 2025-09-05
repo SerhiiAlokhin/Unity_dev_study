@@ -11,6 +11,7 @@ public class RingTrigger : MonoBehaviour
         {
             ScoreManager.Instance?.AddRing(1);
             AudioManager.PlaySound(myAudioLibSounds.RingSFX);
+            HudFx.I?.PlayCounter();
         }
     }
 }
