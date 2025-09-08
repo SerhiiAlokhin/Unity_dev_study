@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1504010944027670463}
   - component: {fileID: 3470995983574688532}
+  - component: {fileID: 4322515707594842436}
   m_Layer: 0
   m_Name: trigger zone 1
   m_TagString: Untagged
@@ -164,6 +165,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6, y: 1.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4322515707594842436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739497698646112810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d3d6f81c60c4490aa411915e8a2ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  myFeedbacks: {fileID: 0}
 --- !u!1 &1015512032893669579
 GameObject:
   m_ObjectHideFlags: 0
